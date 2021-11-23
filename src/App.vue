@@ -3,17 +3,18 @@
     <Header/>
     <v-main>
       <!-- <HelloWorld/> -->
-      <Body/>
+      <Body2/>
     </v-main>
-    <Footer/>
+    <!--<Footer/>-->
   </v-app>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
+
 import Header from "./components/layout/Header.vue";
-import Footer from "./components/layout/Footer.vue";
-import Body from "./components/Body";
+//import Footer from "./components/layout/Footer.vue";
+//import Body from "./components/Body";
+import Body2 from "./components/Body2";
 
 export default {
   name: 'App',
@@ -21,8 +22,9 @@ export default {
   components: {
     // HelloWorld,
     Header,
-    Footer,
-    Body
+    //Footer,
+    //Body,
+    Body2
   },
 
   data: () => ({

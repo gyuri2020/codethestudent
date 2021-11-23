@@ -1,5 +1,5 @@
 <template>
-  <footer id="footer">
+  <footer>
     <div class="footer-info">
       <div class="icons">
         <a v-clipboard:copy="email" @click="copy"><v-icon>mdi-email-outline</v-icon></a>
@@ -44,14 +44,6 @@ export default {
     &:visited {
       color: white;
     }
-  }
-  #footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background: #FFFFFF;
-    color:#aaaaaa;
-    padding: 1rem;
   }
   .footer-info {
     padding-bottom: 1vh;
