@@ -2,7 +2,7 @@
   <footer>
     <div class="footer-info">
       <div class="icons">
-        <a v-clipboard:copy="email" @click="copy"><v-icon>mdi-email-outline</v-icon></a>
+        <span class = 'mx-4'><v-icon>mdi-email-outline</v-icon></span>
         <a href="https://github.com/gyuri2020/codethestudent"><v-icon>mdi-github</v-icon></a>
         <a href="https://gyuri2020.github.io/codethestudent"><v-icon>mdi-link-variant</v-icon></a>
       </div>
@@ -17,7 +17,6 @@ export default {
   name: 'Footer',
   data () {
     return {
-      email: 'tjd8899@gmail.com'
     }
   } 
 };
