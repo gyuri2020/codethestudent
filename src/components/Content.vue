@@ -89,6 +89,7 @@
 <script>
 
   import Footer from "./layout/Footer.vue";
+  import api from '../api'
 
   export default {
 
@@ -153,9 +154,10 @@
     }),
 
   methods: {
-    changeinput(search){
+    async changeinput(search){
       console.log(search)
       this.input = search
+      console.log(await api.getProducts('musinsa'))
     }
   }
 
