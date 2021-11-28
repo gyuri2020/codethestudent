@@ -63,6 +63,7 @@ npm run serve
 + 커밋을 단위별로 올려주세요. [가이드](https://tech.10000lab.xyz/git/git-commit-discipline.html)를 참고해주세요.
 + 이슈 위주로 Task를 관리합니다. 이슈를 활용해 주세요.
 + 호스팅은 `release`브랜치로 이루어집니다. 서버 환경처럼 테스팅할 방법은 제공하지 않으며, 후에 docker를 통해 API코드와(후에 backend로 확장할 것) 함께제공할 예정입니다.
+  + `github action`기능으로 `gh-pages'와 함께 deployment를 담당하고 있습니다.
 + 네이버 쇼핑 검색 API와 네이버 데이터 랩 API를 사용합니다.
   
 ## API 🌉
