@@ -55,7 +55,12 @@ npm run serve
 1. [On the fit](https://gyuri2020.github.io/codethestudent/)에 접속합니다.
 2. 카테고리를 선택합니다.
 3. 맘에드는 상품을 파악합니다.
-  
+
+![image](https://user-images.githubusercontent.com/79851762/143767170-753c4b1e-0b10-4341-8d72-d26470db63af.png)
+
+![image](https://user-images.githubusercontent.com/79851762/143767230-81e40394-8d61-44f4-bbc2-1e1fea6422e6.png)
+
+![image](https://user-images.githubusercontent.com/79851762/143767263-f7cabc58-0caf-46a1-afb6-ee3692e41ca1.png)
   
 ## Contribute Guide 🚩
 
