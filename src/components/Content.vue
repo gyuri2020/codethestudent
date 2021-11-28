@@ -162,13 +162,11 @@
       try {
         const res = await api.getProducts(input)
         this.search_result = res.items
-        console.log(this.search_result)
       } catch (err) {
         console.log(err)
       }
     },
     changeInput(search){
-      console.log(search)
       this.input = search
       search = 'musinsa ' + search
       this.getSearchResult(search)
