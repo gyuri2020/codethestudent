@@ -1,11 +1,11 @@
 <template>
 
-  <section class = 'my-10 py-10 '>
+  <section class = 'my-10 py-10  application'>
 
     <div class="d-flex justify-space-around mb-6">
       <div class='mx-8'>
         <v-card
-          class="mx-auto application"
+          class="mx-auto"
           max-width="400"
         >
           <v-toolbar
@@ -37,7 +37,7 @@
               <v-list-item
                 v-for="child in item.items"
                 :key="child.title"
-                @click="changeinput(child.title)"
+                @click="changeInput(child.title)"
               >
                 <v-list-item-content>
                   <v-list-item-title v-text="child.title"></v-list-item-title>
@@ -51,28 +51,31 @@
     <div>
       <v-row>
         <v-col
-          v-for = 'item in items'
-          :key = 'item.title'
-          class="mx-auto"
-          max-width="300"
-          cols="4"
+          v-for = 'item in search_result'
+          :key = 'item.index'
+          class="mx-7"
+          max-width="200"
+          cols="3"
         >
           <v-card class=' mx-4'>
-            <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-              height="200px"
-            ></v-img>
 
-            <v-card-title>
-              {{item.title}}
-            </v-card-title>
+            <a :href=item.link >
+              <v-img
+                :src=item.image
+                height="200px"
+                width="280px"
+              ></v-img>
+            </a>
+
+            <h4 v-html=item.title class="font-weight-medium">
+            </h4>
 
             <v-card-subtitle>
-              {{input}}
+              {{item.brand}}
             </v-card-subtitle>
 
             <v-card-text>
-              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+              <h4>최저가: {{item.lprice}}</h4>
             </v-card-text>
 
           </v-card>
@@ -98,7 +101,8 @@
     },
 
     data: () => ({
-      input: "",
+      search_result : {},
+      input: "musinsa",
       items: [
         {
           items: [
@@ -136,7 +140,6 @@
             { title: '미니스커트' },
             { title: '미디스커트' },
             { title: '롱스커트' },
-            { title: '원피스' },
           ],
           title: '🥰 스커트 Skirt',
         },
@@ -154,11 +157,27 @@
     }),
 
   methods: {
-    async changeinput(search){
+
+    async getSearchResult(input) {
+      try {
+        const res = await api.getProducts(input)
+        this.search_result = res.items
+        console.log(this.search_result)
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    changeInput(search){
       console.log(search)
       this.input = search
-      console.log(await api.getProducts('musinsa'))
-    }
+      search = 'musinsa ' + search
+      this.getSearchResult(search)
+
+    },
+  },
+
+  mounted: function(){
+    this.getSearchResult('musinsa');
   }
 
 }
@@ -166,12 +185,12 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
 
+section {
+  font-family: 'Nanum Gothic', sans-serif;
+}
 
-  .application {
-    font-family: 'Jua', sans-serif;
-  }
 </style>
 
 
